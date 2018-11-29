@@ -1,0 +1,36 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/NavigationBar.Master" AutoEventWireup="true" CodeBehind="SidebarItem.master.cs" Inherits="cafeLetter.SidebarItem" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="NavigationBarHead" runat="server">
+    <style>
+        .btn {
+            color: #000;
+        }
+    </style>
+    <asp:ContentPlaceHolder ID="SidebarItemHead" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="NavigationBarBody" runat="server">
+
+
+    <div class="container-fluid">
+        <div class="row" style="width: 70%; margin: 0 auto;">
+
+            <!-- Left Side bar -->
+            <div class="col-sm-3 col-md-2 sidebar" style="top: 40px;">
+                <ul id="ItemListShow" runat="server" class="nav nav-sidebar">
+                    <li class="active" style="margin-bottom: 10px;">게시판</li>
+                </ul>
+            </div>
+            <!-- Left Side bar End -->
+
+
+            <!-- Right write (ex. board etc...)   <div class="col-sm-9 col-md-10">  -->
+            <asp:ContentPlaceHolder ID="SidebarItemBody" runat="server">
+            </asp:ContentPlaceHolder>
+
+
+
+        </div>
+    </div>
+
+</asp:Content>

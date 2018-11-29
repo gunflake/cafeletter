@@ -1,0 +1,44 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/NavigationBar.Master" AutoEventWireup="true" CodeBehind="SidebarBoard.master.cs" Inherits="cafeLetter.LeftSidebar" %>
+
+
+<asp:Content ID="Content1" ContentPlaceHolderID="NavigationBarHead" runat="server">
+    <style>
+        .btn{
+            color: #000;
+        }
+    </style>
+    <asp:ContentPlaceHolder ID="SidebarBoardHead" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+
+
+<asp:Content ID="Content2" ContentPlaceHolderID="NavigationBarBody" runat="server">
+ 
+    
+    
+    <div class="container-fluid">
+        <div class="row" style=" width:70%; margin: 0 auto;">
+
+            <!-- Left Side bar -->
+            <div class="col-sm-3 col-md-2 sidebar"  style="top: 40px;">
+                <ul class="nav nav-sidebar">
+                    <li class="active" style="margin-bottom: 10px;">게시판</li>
+                    
+                    <li><a runat="server" href="/Board/BoardList.aspx?strBoardTypeCode=B01">자유게시판</a></li>
+                    <li><a runat="server" href="/Board/BoardList.aspx?strBoardTypeCode=B02">정보게시판</a></li>
+                </ul>
+            </div>
+            <!-- Left Side bar End -->
+
+
+            <!-- Right write (ex. board etc...)   <div class="col-sm-9 col-md-10">  -->
+            <asp:ContentPlaceHolder ID="SidebarBoardBody" runat="server">
+            </asp:ContentPlaceHolder>
+
+
+            
+        </div>
+    </div>
+
+
+</asp:Content>

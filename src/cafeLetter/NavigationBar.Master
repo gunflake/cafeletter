@@ -1,0 +1,154 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="NavigationBar.master.cs" Inherits="cafeLetter.NavigationBar" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/nivo-lightbox.css" rel="stylesheet" />
+    <link href="css/nivo-lightbox-theme/default/default.css" rel="stylesheet" type="text/css" />
+    <link href="css/animations.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet">
+    <link href="color/default.css" rel="stylesheet">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+    <style>
+        a, .tp-caption a.btn:hover {
+            color: #428bca;
+        }
+
+        footer {
+            background-color: #25c1ba;
+        }
+
+        .home-section {
+            padding-top: 0px;
+            padding-bottom: 50px;
+            display: block;
+            position: relative;
+            z-index: 120;
+            min-height: 833px;
+        }
+
+    
+    </style>
+
+    <title></title>
+
+    <asp:ContentPlaceHolder ID="NavigationBarHead" runat="server">
+    </asp:ContentPlaceHolder>
+
+</head>
+
+
+
+<body>
+    <form id="form1" runat="server">
+
+
+
+        <!-- Navigation -->
+        <div id="navigation">
+            <nav class="navbar navbar-custom" role="navigation">
+
+                <div class="row" style="width: 70%; margin: 0 auto;">
+                    <div class="col-md-1 ">
+                        <div class="site-logo" style="margin-top: 0px;">
+                            <a href="/Home.aspx" class="brand">
+                                <img alt="Brand" src="/image/logo.png" width="50" height="50" /></a>
+                        </div>
+                    </div>
+
+
+                 
+
+                    <div class="col-md-6">
+
+
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse" id="menu">
+                            <ul class="nav navbar-nav">
+                                <li><a runat="server" href="/Search/SearchList.aspx">통합검색</a></li>
+                                <li class="active"><a runat="server" href="/Board/BoardList.aspx?strBoardTypeCode=B01">게시판</a></li>
+
+                                <li><a runat="server" href="/Gallery/GalleryList.aspx">갤러리</a></li>
+                                <li><a runat="server" href="/Item/ItemList.aspx">카페물품</a></li>
+                                <li><a href="/Service/NoticeList.aspx">고객센터</a></li>
+                                <li><a id="AdminTab" visible="false" runat="server" style="font-weight: bold;  color:#ff48f6" href="/Admin/AdminInfo.aspx"><b>관리자</b></a></li>
+                            </ul>
+                        </div>
+                        <!-- /.Navbar-collapse -->
+
+                    </div>
+
+                    <div class="col-md-5">
+                        <div class="collapse navbar-collapse" id="member">
+                            <ul runat="server" class="nav navbar-nav navbar-right">
+                                <li><a id="MyCash" runat="server" href="/Cash/CashCharge.aspx"><%=intMyCash.ToString("#,##0") %> <img alt="beans" src="/image/bean.PNG" width="20" height="20" /></a></li>
+                                <li><a id="Login"  runat="server" href="/Member/login.aspx">Login</a></li>
+                                <li><a id="SignUp" runat="server" href="/Member/SignUp.aspx">Sign Up</a></li>
+                                <li><a id="MyInfo" runat="server" href="/Member/MyInfo.aspx"><%=userID %> 님</a></li>
+                                <li><a id="Logout" runat="server" href="/Member/Logout.aspx">Logout</a></li>
+                            </ul>
+                         
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- /.container -->
+            </nav>
+        </div>
+        <!-- /Navigation -->
+        <input type="hidden" id="MyCashPrice" value='<%=intMyCash %>' />
+
+        <section id="about" class="home-section color-dark bg-white">
+
+            <!--  -->
+            <asp:ContentPlaceHolder ID="NavigationBarBody" runat="server">
+            </asp:ContentPlaceHolder>
+
+
+        </section>
+
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <ul class="footer-menu">
+                            <li><a href="/Home.aspx">Home</a></li>
+
+                        </ul>
+                    </div>
+                    <div class="col-md-6 text-right copyright">
+                        &copy;Copyright - PayLetter. All Rights Reserved
+          <div class="credits">
+              Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+          </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+
+    </form>
+
+
+
+
+
+</body>
+
+
+</html>

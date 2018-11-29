@@ -1,0 +1,38 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/NavigationBar.Master" AutoEventWireup="true" CodeBehind="SidebarSearch.master.cs" Inherits="cafeLetter.SidebarSearch" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="NavigationBarHead" runat="server">
+
+     <style>
+        .btn {
+            color: #000;
+        }
+    </style>
+
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="NavigationBarBody" runat="server">
+
+     <div class="container-fluid">
+        <div class="row" style="width: 70%; margin: 0 auto;">
+
+            <!-- Left Side bar -->
+            <div class="col-sm-3 col-md-2 sidebar" style="top: 40px;">
+                <ul class="nav nav-sidebar">
+                    <li class="active" style="margin-bottom: 10px;">통합검색</li>
+                    <li><a runat="server" href="/Search/SearchList.aspx">게시글 검색</a></li>
+                    <li><a runat="server" href="/Search/SearchCommentList.aspx">댓글 검색</a></li>
+                    
+                </ul>
+            </div>
+            <!-- Left Side bar End -->
+
+
+            <!-- Right write (ex. board etc...)   <div class="col-sm-9 col-md-10">  -->
+            <asp:ContentPlaceHolder ID="SidebarServiceBody" runat="server">
+            </asp:ContentPlaceHolder>
+
+
+
+        </div>
+    </div>
+
+
+</asp:Content>

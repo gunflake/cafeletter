@@ -1,0 +1,39 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/NavigationBar.Master" AutoEventWireup="true" CodeBehind="SidebarMember.master.cs" Inherits="cafeLetter.SidebarMember" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="NavigationBarHead" runat="server">
+    <style>
+        .btn{
+            color: #000;
+        }
+    </style>
+    <asp:ContentPlaceHolder ID="SidebarMemberHead" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="NavigationBarBody" runat="server">
+      <div class="container-fluid">
+        <div class="row" style=" width:70%; margin: 0 auto;">
+
+            <!-- Left Side bar -->
+            <div class="col-sm-3 col-md-2 sidebar"  style="top: 40px;">
+                <ul class="nav nav-sidebar">
+                    <li class="active" style="margin-bottom: 10px;">정보</li>                    
+                    <li><a runat="server" href="/Member/MyInfo.aspx">나의 활동</a></li>
+                    <li><a runat="server" href="/Cash/MyCashInfo.aspx">나의 결제내역</a></li>
+                    <li><a runat="server" href="/Member/BuyList.aspx">나의 구매내역</a></li>
+                    <li><a runat="server" href="/Member/MyInfoModify.aspx">회원 정보 수정</a></li>
+                    <li><a runat="server" href="/Member/MyInfoUpdatePW.aspx">비밀 번호 수정</a></li>
+                </ul>
+            </div>
+            <!-- Left Side bar End -->
+
+
+            <!-- Right write (ex. board etc...)   <div class="col-sm-9 col-md-10">  -->
+            <asp:ContentPlaceHolder ID="SidebarMemberBody" runat="server">
+            </asp:ContentPlaceHolder>
+
+
+            
+        </div>
+    </div>
+</asp:Content>
